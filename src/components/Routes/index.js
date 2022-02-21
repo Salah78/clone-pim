@@ -1,18 +1,23 @@
 import React from 'react'
-import { Router, Route, Switch} from 'react-router-dom'
-import {Home, About, Chat, Evenement, Profil, Contact} from '../Pages/Home'
+import { Route } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Home from '../../Pages/Home'
+import About from '../../Pages/About'
+
 
 const index = () => {
     return (
         <div>
             <Router>
                 <Switch>
-                    <Route patch="/" exact component={Home} />
-                    <Route path='/about' exact component={About}/>
-                    <Route path='/chat' exact component={Chat}/>
-                    <Route path='/evenement' exact component={Evenement}/>
-                    <Route path='/profil' exact component={Profil}/>
-                    <Route path='/contact' exact component={Contact}/>
+                    <Route patch="/">
+                        <Home />
+                    </Route>
+                    <Route patch="/about">
+                        <About />
+                    </Route>
+                   
                 </Switch>
             </Router>
         </div>
