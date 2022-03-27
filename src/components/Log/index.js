@@ -1,17 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const index = () => {
-    return (
-        <div className='connection-form'>
-            <div className="form-container">
-                <ul>
-                    <li>S'inscrire</li>
-                    <li>Se connecter</li>
-                </ul>
-                
-            </div>
-        </div>
-    )
-}
+import SignInForm from './SignInForm';
+import SignUpForm from './SignUpForm';
 
-export default index
+const Log = () => {
+  const [signUpModal, setSignUpModal] = useState(true);
+  const [signInModal, setSignInModal] = useState(false);
+
+  const handleModals = (e) => {
+    if (e.target.id === 'register') {
+      setSignInModal(false);
+      setSignUpModal(true);
+    } else if (e.target.id === 'login') {
+      setSignUpModal(false);
+      setSignInModal(true);
+    }
+  };
+
+  return (
+    <div className="connection-form">
+      <div className="form-container">
+        <ul>
+          <li
+            onClick={handleModals}
+            id="register"
+            className={signUpModal ? 'active-btn' : null}
+          >
+            S'inscrire
+          </li>
+          <li
+            onClick={handleModals}
+            id="login"
+            className={signInModal ? 'active-btn' : null}
+          >
+            Se connecter
+          </li>
+        </ul>
+
+        {signUpModal && <SignUpForm />}
+        {signInModal && <SignInForm />}
+      </div>
+    </div>
+  );
+};
+
+export default Log;
