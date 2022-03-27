@@ -1,12 +1,14 @@
 import React from 'react'
 
-const index = () => {
+
+const Log = () => {
+   
     return (
-        <div className='connection-form'>
+        <div className="connection-form">
             <div className="form-container">
                 <ul>
-                    <li>S'inscrire</li>
                     <li>Se connecter</li>
+                    <li>S'inscrire</li>
                 </ul>
                 
             </div>
@@ -14,4 +16,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Log

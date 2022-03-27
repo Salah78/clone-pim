@@ -1,10 +1,13 @@
 import React from 'react'
+import Log from "../components/Log";
 
 const Profile = () => {
     return (
-        <div>
-                 <h1>Hello Profile</h1>
-        </div>
+        <div className="profil-page">
+          <div className="log-container">
+            <Log />
+          </div>
+      </div>
     )
 }
 
